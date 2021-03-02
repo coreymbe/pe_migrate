@@ -1,0 +1,24 @@
+{
+  "description": "Transfer backups to the target host.",
+  "parameters": {
+    "backupdir": {
+      "description": "The directory where the backups were generated.",
+      "type": "String",
+      "default": "/tmp/backup"
+    },
+    "targetdir": {
+      "description": "The directory on the target host where the backups will be transferred.",
+      "type": "String",
+      "default": "/tmp/backup"
+    },
+    "targethost": {
+      "description": "The FQDN of the host you are migrating to.",
+      "type": "String"
+    },
+    "environment": {
+      "description": "The environment that this module was installed in.",
+      "type": "String",
+      "default": "production"
+    }
+  }
+}

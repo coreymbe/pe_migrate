@@ -1,0 +1,10 @@
+{
+  "description": "Generate a backup of the Databases",
+  "parameters": {
+    "backupdir": {
+      "description": "The directory where the backups will be created. Should be the same location used for pe_migrate::ssl_backup.",
+      "type": "String",
+      "default": "/tmp/backup"
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "name": "coreymbe-pe_migrate",
+  "version": "0.1.0",
+  "author": "coreymbe",
+  "summary": "Beta Release.",
+  "license": "Apache-2.0",
+  "source": "https://github.com/coreymbe/pe_migrate",
+  "project_page": "https://github.com/coreymbe/pe_migrate",
+  "issues_url": "https://github.com/coreymbe/pe_migrate#issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs/yumrepo_core",
+      "version_requirement": ">= 1.0.0"
+    },
+    {
+      "name": "puppetlabs/apt",
+      "version_requirement": ">= 6.3.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "6",
+        "7",
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "OracleLinux",
+      "operatingsystemrelease": [
+        "6",
+        "7",
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "6",
+        "7",
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "Scientific",
+      "operatingsystemrelease": [
+        "6",
+        "7",
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "8",
+        "9"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "14.04",
+        "16.04",
+        "18.04"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.7.0 < 6.12.0"
+    }
+  ],
+  "pdk-version": "2.0.0",
+  "template-url": "pdk-default#2.0.0",
+  "template-ref": "tags/2.0.0-0-ge838f1d"
+}
