@@ -116,7 +116,11 @@ Common steps include:
 
 Configure your new agents and compilers:
 
-1.  Point the agents at the new primary server. On each agent, update `puppet.conf`: `puppet config set server <NEW PRIMARY SERVER FQDN>`
+1.  Point the agents at the new primary server. On each agent, update `puppet.conf`: `puppet config set server <NEW PRIMARY SERVER FQDN>` You can automate this step by running the following task against your PE Agent node group from your old primary server. Please note the PE Agent node group id can be found in the PE console under _Node Groups -> PE Agent -> Activity -> The ID will be in the very first entry._
+
+```
+puppet task run pe_migrate::agent_migrate newprimary=<NEW PRIMARY FQDN> --node-group <PE-Agent node-group-id>
+```
 
 2.  Regenerate certs for all compilers using our documentation for [PE 2019.2](https://puppet.com/docs/pe/2019.2/regenerate_certificates.html), making sure to include `--allow-dns-alt-names` when signing the compiler's certificate request.
 
