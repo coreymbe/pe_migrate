@@ -69,7 +69,7 @@ puppet task run pe_migrate::backup_transfer environment=<MODULE ENVIRONMENT> bac
 #### **Step Four: Restore the SSL directory.**
 
 ```
-puppet task run pe_migrate::restore_ssldir privatekey=</PATH/TO/PRIVATEKEY> targetdir=</DIR/ON/TARGETHOST> targethost=<NEW PRIMARY SERVER FQDN> --targets <PRIMARY SERVER FQDN>
+puppet task run pe_migrate::restore_ssldir privatekey=</PATH/TO/PRIVATEKEY> targetdir=</DIR/ON/TARGETHOST> targethost=<NEW PRIMARY SERVER FQDN> --nodes <PRIMARY SERVER FQDN>
 ```
 
 #### **Step Five: Install PE**
