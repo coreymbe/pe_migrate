@@ -1,0 +1,9 @@
+{
+  "description": "Points your agent nodes to the new primary server",
+  "parameters": {
+    "newprimary": {
+      "description": "Hostname of the new primary server which your agents are being migrated to",
+      "type": "String"
+    }
+  }
+}
