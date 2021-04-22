@@ -1,3 +1,7 @@
+
+# Prepares a node for migration by ensuring Puppet package repos are available
+# @example
+#   include  pe_migrate::prep
 class pe_migrate::prep {
 
   if $facts['os']['family'] == 'RedHat' {
