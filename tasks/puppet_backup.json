@@ -1,0 +1,10 @@
+{
+  "description": "Generate a backup of the Puppet Installation",
+  "parameters": {
+    "backupdir": {
+      "description": "The directory where the backups will be created.",
+      "type": "String",
+      "default": "/tmp/backup"
+    }
+  }
+}
