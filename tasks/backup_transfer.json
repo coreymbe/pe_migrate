@@ -3,21 +3,23 @@
   "parameters": {
     "backupdir": {
       "description": "The directory where the backups were generated.",
-      "type": "String",
-      "default": "/tmp/backup"
+      "type": "String"
     },
     "targetdir": {
       "description": "The directory on the target host where the backups will be transferred.",
-      "type": "String",
-      "default": "/tmp/backup"
+      "type": "String"
     },
     "targethost": {
       "description": "The FQDN of the host you are migrating to.",
       "type": "String"
     },
+    "manual": {
+      "description": "Set this parameter to true if you are following the Manual Migration steps.",
+      "type": "Optional[Boolean]"
+    },
     "environment": {
       "description": "The environment that this module was installed in.",
-      "type": "String",
+      "type": "Optional[String]",
       "default": "production"
     }
   }

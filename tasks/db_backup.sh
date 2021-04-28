@@ -1,5 +1,5 @@
 #!/bin/sh
-# Puppet Task Name: db_backup
+#Puppet Task Name: db_backup
 
 # Backup DB Task
 
@@ -7,8 +7,17 @@ set -e
 
 BASE_BACKUP_DIR=$PT_backupdir
 DB_BACKUP=${BASE_BACKUP_DIR}/database
+PUPPET_BIN_DIR="/opt/puppetlabs/bin"
+PUPPET_VERSION=$("${PUPPET_BIN_DIR?}/puppet" --version)
 
-if [[ $(/opt/puppetlabs/bin/facter -p pe_server_version) < 2019 ]]
+if [[ ${PUPPET_VERSION%%.*} -ge 6 ]]
+  then
+    PUPPET_6=true
+  else
+    PUPPET_6=false
+fi
+
+if [ ${PUPPET_6} = false ]
 
   then
     mkdir -p $DB_BACKUP
@@ -21,6 +30,6 @@ if [[ $(/opt/puppetlabs/bin/facter -p pe_server_version) < 2019 ]]
     printf 'DB Dump Successful \n'
 
   else
-  	printf 'The tasks provided in this module are not compatible with this version of Puppet Enterprise. \n'
+    printf 'This task is not compatible with this version of Puppet Enterprise. Run pe_migrate::puppet_backup -> pe_migrate::backup_transfer -> pe_migrate::puppet_restore. \n'
 
 fi

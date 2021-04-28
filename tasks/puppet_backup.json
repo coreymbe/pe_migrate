@@ -1,6 +1,5 @@
 {
-  "description": "Generate a backup of the SSLDIR.",
-  "private": true,
+  "description": "Generate a backup of the Puppet Installation",
   "parameters": {
     "backupdir": {
       "description": "The directory where the backups will be created.",
