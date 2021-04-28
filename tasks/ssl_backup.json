@@ -1,10 +1,10 @@
 {
-  "description": "Generate a backup of the SSLDIR",
+  "description": "Generate a backup of the SSLDIR.",
+  "private": true,
   "parameters": {
     "backupdir": {
       "description": "The directory where the backups will be created.",
-      "type": "String",
-      "default": "/tmp/backup"
+      "type": "String"
     }
   }
 }

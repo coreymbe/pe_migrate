@@ -1,17 +1,16 @@
 {
-  "description": "Restore the backup on that new host.",
+  "description": "Restore the backup on the new host.",
   "parameters": {
     "targetdir": {
-      "description": "The directory where the backups were generated.",
-      "type": "String",
-      "default": "/tmp/backup"
-    },
-    "targethost": {
-      "description": "The FQDN of the host you are migrating to.",
+      "description":"The directory where the backups were generated.",
       "type": "String"
     },
-    "privatekey": {
-      "description": "The path of the private key configured to access the target host.",
+    "targethost":{
+      "description":"The FQDN of the host you are migrating to.",
+      "type": "String"
+    },
+    "privatekey":{
+      "description":"The path of the private key configured to access the target host.",
       "type": "String"
     }
   }

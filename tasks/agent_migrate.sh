@@ -1,17 +1,16 @@
 #!/bin/sh
 # Puppet Task Name: agent_migrate
 
-NEW_PRIMARY=$PT_newprimary
+TARGET_HOST=$PT_targethost
+PUPPET_BIN_DIR=/opt/puppetlabs/bin
 
-set -e
+${PUPPET_BIN_DIR}/puppet config set server $TARGET_HOST
 
-if [[ $(/opt/puppetlabs/bin/facter -p pe_server_version) < 2019 ]]
+if [ $? -ne 0 ]
 
   then
-  	puppet config set server $NEW_PRIMARY
-  	printf "server puppet.conf parameter updated to %s \n" "$NEW_PRIMARY"
-
+    printf "Failed to update 'server' parameter in puppet.conf. \n"
   else
-  	printf 'The tasks provided in this module are not compatible with this version of Puppet Enterprise. \n'
+    printf "The puppet.conf 'server' parameter was updated to %s. \n" "$TARGET_HOST"
 
 fi

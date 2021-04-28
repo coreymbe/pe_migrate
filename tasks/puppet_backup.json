@@ -3,8 +3,7 @@
   "parameters": {
     "backupdir": {
       "description": "The directory where the backups will be created.",
-      "type": "String",
-      "default": "/tmp/backup"
+      "type": "String"
     }
   }
 }

@@ -1,10 +1,10 @@
 {
   "description": "Restore the SSLDIR on the target host.",
+  "private": true,
   "parameters": {
     "targetdir": {
       "description": "The directory where the backups were generated.",
-      "type": "String",
-      "default": "/tmp/backup"
+      "type": "String"
     },
     "targethost": {
       "description": "The FQDN of the host you are migrating to.",
