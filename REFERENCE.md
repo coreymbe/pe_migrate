@@ -10,11 +10,12 @@
 
 ### Tasks
 
-* [`agent_migrate`](#agent_migrate): Points your agent nodes to the new primary server
 * [`backup_transfer`](#backup_transfer): Transfer backups to the target host.
-* [`db_backup`](#db_backup): Generate a backup of the Databases
+* [`db_backup`](#db_backup): Generate a backup of the PE databases.
+* [`puppet_backup`](#puppet_backup): Generate a backup of the Puppet Installation
+* [`puppet_restore`](#puppet_restore): Restore the backup on the new host.
 * [`restore_ssldir`](#restore_ssldir): Restore the SSLDIR on the target host.
-* [`ssl_backup`](#ssl_backup): Generate a backup of the SSLDIR
+* [`ssl_backup`](#ssl_backup): Generate a backup of the SSLDIR.
 
 ## Classes
 
@@ -31,20 +32,6 @@ include  pe_migrate::prep
 ```
 
 ## Tasks
-
-### <a name="agent_migrate"></a>`agent_migrate`
-
-Points your agent nodes to the new primary server
-
-**Supports noop?** false
-
-#### Parameters
-
-##### `newprimary`
-
-Data type: `String`
-
-Hostname of the new primary server which your agents are being migrated to
 
 ### <a name="backup_transfer"></a>`backup_transfer`
 
@@ -72,15 +59,21 @@ Data type: `String`
 
 The FQDN of the host you are migrating to.
 
+##### `manual`
+
+Data type: `Optional[Boolean]`
+
+Set this parameter to true if you are following the Manual Migration steps.
+
 ##### `environment`
 
-Data type: `String`
+Data type: `Optional[String]`
 
 The environment that this module was installed in.
 
 ### <a name="db_backup"></a>`db_backup`
 
-Generate a backup of the Databases
+Generate a backup of the PE databases.
 
 **Supports noop?** false
 
@@ -91,6 +84,46 @@ Generate a backup of the Databases
 Data type: `String`
 
 The directory where the backups will be created. Should be the same location used for pe_migrate::ssl_backup.
+
+### <a name="puppet_backup"></a>`puppet_backup`
+
+Generate a backup of the Puppet Installation
+
+**Supports noop?** false
+
+#### Parameters
+
+##### `backupdir`
+
+Data type: `String`
+
+The directory where the backups will be created.
+
+### <a name="puppet_restore"></a>`puppet_restore`
+
+Restore the backup on the new host.
+
+**Supports noop?** false
+
+#### Parameters
+
+##### `targetdir`
+
+Data type: `String`
+
+The directory where the backups were generated.
+
+##### `targethost`
+
+Data type: `String`
+
+The FQDN of the host you are migrating to.
+
+##### `privatekey`
+
+Data type: `String`
+
+The path of the private key configured to access the target host.
 
 ### <a name="restore_ssldir"></a>`restore_ssldir`
 
@@ -120,7 +153,7 @@ The path of the private key configured to access the target host.
 
 ### <a name="ssl_backup"></a>`ssl_backup`
 
-Generate a backup of the SSLDIR
+Generate a backup of the SSLDIR.
 
 **Supports noop?** false
 

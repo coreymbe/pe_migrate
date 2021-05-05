@@ -2,7 +2,15 @@
 # Puppet Task Name: agent_migrate
 
 TARGET_HOST=$PT_targethost
+CLEAN_HOST=$PT_cleanhost
 PUPPET_BIN_DIR=/opt/puppetlabs/bin
+
+if [$CLEAN_HOST]
+
+  then
+    ${PUPPET_BIN_DIR}/puppet ssl clean
+
+fi
 
 ${PUPPET_BIN_DIR}/puppet config set server $TARGET_HOST
 
