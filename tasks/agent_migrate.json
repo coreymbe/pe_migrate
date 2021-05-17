@@ -4,6 +4,11 @@
     "targethost": {
       "description": "FQDN of the new primary server which your agents are being migrated to.",
       "type": "String"
+    },
+    "cleanhost": {
+      "description": "If you need the existing SSL certificate on the agent cleaned. Default to false",
+      "type": "Boolean",
+      "default": false
     }
   }
 }
