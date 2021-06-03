@@ -5,7 +5,7 @@ TARGET_HOST=$PT_targethost
 CLEAN_HOST=$PT_cleanhost
 PUPPET_BIN_DIR=/opt/puppetlabs/bin
 
-if [$CLEAN_HOST = true ]
+if [ $CLEAN_HOST = true ]
 
   then
     ${PUPPET_BIN_DIR}/puppet ssl clean
