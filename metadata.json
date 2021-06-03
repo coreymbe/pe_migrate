@@ -1,12 +1,12 @@
 {
   "name": "coreymbe-pe_migrate",
-  "version": "0.1.0",
+  "version": "0.2.5",
   "author": "coreymbe",
   "summary": "Beta Release.",
   "license": "Apache-2.0",
   "source": "https://github.com/coreymbe/pe_migrate",
   "project_page": "https://github.com/coreymbe/pe_migrate",
-  "issues_url": "https://github.com/coreymbe/pe_migrate#issues",
+  "issues_url": "https://github.com/coreymbe/pe_migrate/issues",
   "dependencies": [
     {
       "name": "puppetlabs/yumrepo_core",
@@ -69,7 +69,7 @@
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 4.7.0 < 6.12.0"
+      "version_requirement": ">= 4.10.4 < 8.0.0"
     }
   ],
   "pdk-version": "2.1.0",
