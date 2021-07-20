@@ -18,3 +18,4 @@ if [ "$MANUAL_MIGRATION" = true ]
 fi
 
 rsync -ave 'ssh -o StrictHostKeyChecking=no' "$PT_backupdir"/* root@"$PT_targethost":"$PT_targetdir"
+

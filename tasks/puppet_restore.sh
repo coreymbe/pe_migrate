@@ -11,3 +11,4 @@ BOLT=${PUPPET_BIN_DIR}/bolt
 FACTER=/usr/local/bin/facter
 
 $BOLT command run ""$PUPPET_BIN_DIR"/puppet-backup restore "$PT_targetdir"/pe_migrate-$($FACTER -p pe_server_version)_backup.tgz --force" --targets "$PT_targethost" --tty --user root --no-host-key-check --private-key "$PT_privatekey"
+
