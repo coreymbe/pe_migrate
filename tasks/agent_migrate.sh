@@ -22,3 +22,4 @@ if [ $? -ne 0 ]
     printf "The puppet.conf 'server' parameter was updated to %s. \n" "$TARGET_HOST"
 
 fi
+

@@ -27,3 +27,4 @@ if [ ${PUPPET_6} = false ]
     printf 'This task is not compatible with this version of Puppet Enterprise. Run pe_migrate::puppet_backup -> pe_migrate::backup_transfer -> pe_migrate::puppet_restore. \n'
 
 fi
+
